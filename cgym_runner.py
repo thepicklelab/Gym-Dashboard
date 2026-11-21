@@ -111,7 +111,10 @@ def run_gym():
     except requests.RequestException as e:
         print(f"Could not reach the gym page: {e}")
         return
-
+        
+    print(f"Found {len(blocks)} gym blocks")
+    for b in blocks[:6]:
+        print(b[:200])
     row = build_row(blocks)
 
     if os.path.exists(CSV_FILE):
